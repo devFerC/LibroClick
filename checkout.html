@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Carrito de Compras</title>
+</head>
+<body>
+  <header>
+    <h1>Carrito de Compras</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="categoria-ficcion.html">Ficción</a>
+      <a href="categoria-no-ficcion.html">No Ficción</a>
+      <a href="checkout.html">Carrito</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Carrito</h2>
+    <div id="carrito">
+      <!-- El carrito se cargará dinámicamente -->
+    </div>
+    <div id="pago">
+      <h3>Procesar Pago</h3>
+      <div id="paypal-button-container"></div>
+    </div>
+  </main>
+  <script src="js/script.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=ATjBlvsLaRIxVh4cWvTBMs3hzUWanJHmnj51wpy5ycaBUiKzYplTEm0RsEd8UOWQX4FIyUHA75s9wX8C&currency=USD"></script>
+  <script>
+    // Calcula el total del carrito
+    const totalCarrito = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+
+    // Renderiza el botón de PayPal
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: totalCarrito.toFixed(2) // Total del carrito
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Pago realizado por ' + details.payer.name.given_name);
+          // Limpia el carrito después del pago
+          localStorage.removeItem("carrito");
+          location.reload();
+        });
+      },
+      onError: function(err) {
+        console.error('Error al procesar el pago:', err);
+        alert('Hubo un problema al procesar el pago. Inténtalo de nuevo.');
+      }
+    }).render('#paypal-button-container');
+  </script>
+</body>
+</html>

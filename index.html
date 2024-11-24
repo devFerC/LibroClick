@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Librería Online</title>
+</head>
+<body class="index">
+  <header>
+    <h1>Librería Online</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="categoria-ficcion.html">Ficción</a>
+      <a href="categoria-no-ficcion.html">No Ficción</a>
+      <a href="checkout.html">Carrito</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Catálogo de Libros</h2>
+    <div id="buscador">
+      <input type="text" id="input-buscar" placeholder="Buscar libros por título..." />
+      <button id="btn-buscar">Buscar</button>
+    </div>
+    <div id="catalogo">
+      <!-- Los libros se cargan dinámicamente desde js/script.js -->
+    </div>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
