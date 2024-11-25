@@ -1,23 +1,13 @@
 const libros = [
   // Ficción
-  { id: 1, titulo: "1984", autor: "George Orwell", precio: 15.99, categoria: "Ficción", imagen: "images/001.jpg" },
-  { id: 2, titulo: "El Señor de los Anillos", autor: "J.R.R. Tolkien", precio: 25.99, categoria: "Ficción", imagen: "images/002.jpg" },
-  { id: 3, titulo: "Cien Años de Soledad", autor: "Gabriel García Márquez", precio: 18.99, categoria: "Ficción", imagen: "images/002.jpg" },
-  { id: 4, titulo: "Dune", autor: "Frank Herbert", precio: 22.99, categoria: "Ficción", imagen: "images/002.jpg" },
-  { id: 5, titulo: "Crónica de una Muerte Anunciada", autor: "Gabriel García Márquez", precio: 12.99, categoria: "Ficción", imagen: "images/002.jpg" },
-  { id: 6, titulo: "Harry Potter y la Piedra Filosofal", autor: "J.K. Rowling", precio: 14.99, categoria: "Ficción", imagen: "images/002.jpg" },
-  { id: 7, titulo: "Juego de Tronos", autor: "George R.R. Martin", precio: 19.99, categoria: "Ficción", imagen: "images/002.jpg" },
-  { id: 8, titulo: "El Hobbit", autor: "J.R.R. Tolkien", precio: 17.99, categoria: "Ficción", imagen: "images/002.jpg" },
+  { id: 1,  titulo: "Dune", autor: "Frank Herbert", precio: 22.99, categoria: "Ficción", imagen: "images/001.jpg" },
+  { id: 2, titulo: "El Señor de los Anillos", autor: "J.R.R. Tolkien", precio: 25.99, categoria: "Ficción", imagen: "images/001.jpg" },
+  { id: 3, titulo: "El Hobbit", autor: "J.R.R. Tolkien", precio: 17.99, categoria: "Ficción", imagen: "images/001.jpg" },
 
   // No Ficción
-  { id: 9, titulo: "Sapiens: De Animales a Dioses", autor: "Yuval Noah Harari", precio: 20.99, categoria: "No Ficción", imagen: "images/002.jpg" },
-  { id: 10, titulo: "Educated", autor: "Tara Westover", precio: 18.99, categoria: "No Ficción", imagen: "images/002.jpg" },
-  { id: 11, titulo: "El Poder de los Hábitos", autor: "Charles Duhigg", precio: 16.99, categoria: "No Ficción", imagen: "images/002.jpg" },
-  { id: 12, titulo: "Homo Deus", autor: "Yuval Noah Harari", precio: 22.99, categoria: "No Ficción", imagen: "images/002.jpg" },
-  { id: 13, titulo: "El Gen", autor: "Siddhartha Mukherjee", precio: 21.99, categoria: "No Ficción", imagen: "images/002.jpg" },
-  { id: 14, titulo: "Cómo Hacer Amigos e Influir en las Personas", autor: "Dale Carnegie", precio: 13.99, categoria: "No Ficción", imagen: "images/002.jpg" },
-  { id: 15, titulo: "La Breve Historia de Todo", autor: "Bill Bryson", precio: 19.99, categoria: "No Ficción", imagen: "images/002.jpg" },
-  { id: 16, titulo: "Steve Jobs", autor: "Walter Isaacson", precio: 24.99, categoria: "No Ficción", imagen: "images/002.jpg" },
+  { id: 4,titulo: "Steve Jobs", autor: "Walter Isaacson", precio: 24.99, categoria: "No Ficción", imagen: "images/001.jpg" },
+  { id: 5, titulo: "El ser y la nada", autor: " Jean-Paul Sartre ", precio: 18.99, categoria: "No Ficción", imagen: "images/001.jpg" },
+  { id: 6, titulo: "El hombre y sus símbolos", autor: "Carl Jung", precio: 16.99, categoria: "No Ficción", imagen: "images/001.jpg" },
 ];
 // Cargar carrito desde LocalStorage
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
